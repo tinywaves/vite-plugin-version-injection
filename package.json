@@ -1,0 +1,39 @@
+{
+  "name": "vite-plugin-version-injection",
+  "type": "module",
+  "version": "0.0.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "vite": ">=6.0.0"
+  },
+  "devDependencies": {
+    "@dhzh/eslint-config": "^0.27.0",
+    "@rslib/core": "^0.5.4",
+    "@types/node": "^22.8.1",
+    "eslint": "^9.21.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2",
+    "vitest": "^3.0.8"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "core-js",
+      "esbuild"
+    ]
+  }
+}
