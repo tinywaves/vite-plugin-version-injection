@@ -1,5 +1,8 @@
 {
-  "cSpell.words": ["rslib"],
+  "cSpell.words": [
+    "bumpp",
+    "rslib"
+  ],
   // Entry
   "eslint.format.enable": true,
   "eslint.ignoreUntitled": true,

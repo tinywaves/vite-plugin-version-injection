@@ -16,7 +16,12 @@
   "scripts": {
     "build": "rslib build",
     "dev": "rslib build --watch",
-    "test": "vitest run"
+    "test": "vitest run",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepare": "simple-git-hooks",
+    "prepack": "pnpm run build",
+    "release": "bumpp && pnpm publish --access=public"
   },
   "peerDependencies": {
     "vite": ">=6.0.0"
@@ -25,7 +30,10 @@
     "@dhzh/eslint-config": "^0.27.0",
     "@rslib/core": "^0.5.4",
     "@types/node": "^22.8.1",
+    "bumpp": "^10.1.0",
     "eslint": "^9.21.0",
+    "lint-staged": "^15.5.0",
+    "simple-git-hooks": "^2.11.1",
     "typescript": "^5.8.2",
     "vite": "^6.2.2",
     "vitest": "^3.0.8"
@@ -33,7 +41,14 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "core-js",
-      "esbuild"
+      "esbuild",
+      "simple-git-hooks"
     ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
