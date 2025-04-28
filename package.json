@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-version-injection",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Vite plugin that injects version information into your vite based application",
   "exports": {
     ".": {
