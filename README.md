@@ -1,6 +1,6 @@
 # vite-plugin-version-injection
 
-A Vite plugin that injects version information into your application. This plugin automatically injects your app version into HTML, making it available at runtime.
+A Vite plugin that injects version information into your vite application. This plugin automatically injects your app version into HTML, making it available at runtime.
 
 [中文简体](./README.zh-CN.md)
 
