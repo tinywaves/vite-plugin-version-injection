@@ -2,6 +2,7 @@
   "name": "vite-plugin-version-injection",
   "type": "module",
   "version": "0.0.2",
+  "description": "A Vite plugin that injects version information into your vite based application",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -16,33 +17,34 @@
   "scripts": {
     "build": "rslib build",
     "dev": "rslib build --watch",
-    "test": "vitest run",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "prepare": "simple-git-hooks",
     "prepack": "pnpm run build",
-    "release": "bumpp && pnpm publish --access=public"
+    "prepare": "simple-git-hooks",
+    "release": "bumpp && pnpm publish --access=public",
+    "test": "vitest run"
   },
   "peerDependencies": {
     "vite": ">=6.0.0"
   },
   "devDependencies": {
-    "@dhzh/eslint-config": "^0.27.0",
-    "@rslib/core": "^0.5.4",
-    "@types/node": "^22.8.1",
+    "@dhzh/eslint-config": "^1.3.0",
+    "@rslib/core": "^0.6.7",
+    "@types/node": "^22.15.3",
     "bumpp": "^10.1.0",
-    "eslint": "^9.21.0",
-    "lint-staged": "^15.5.0",
-    "simple-git-hooks": "^2.11.1",
-    "typescript": "^5.8.2",
-    "vite": "^6.2.2",
-    "vitest": "^3.0.8"
+    "eslint": "^9.25.1",
+    "lint-staged": "^15.5.1",
+    "simple-git-hooks": "^2.13.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3",
+    "vitest": "^3.1.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "core-js",
       "esbuild",
-      "simple-git-hooks"
+      "simple-git-hooks",
+      "unrs-resolver"
     ]
   },
   "simple-git-hooks": {

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import type { Plugin, ResolvedConfig } from 'vite';
 import versionInjection from '../src';
+import type { ResolvedConfig } from 'vite';
 
 vi.mock('node:fs', () => ({
   default: {
@@ -34,7 +34,7 @@ describe('vite-plugin-version-injection', () => {
   it('use custom versionVarName to inject version', () => {
     const plugin = versionInjection({
       versionVarName: 'CUSTOM_VERSION',
-    }) as Plugin;
+    });
     (plugin.configResolved as any)({} as ResolvedConfig);
     const result = (plugin.transformIndexHtml! as any)('<html><head></head><body></body></html>');
     expect(result).toEqual({
@@ -52,7 +52,7 @@ describe('vite-plugin-version-injection', () => {
   it('use custom injectTo to inject version', () => {
     const plugin = versionInjection({
       injectTo: 'body',
-    }) as Plugin;
+    });
     (plugin.configResolved as any)({} as ResolvedConfig);
     const result = (plugin.transformIndexHtml! as any)('<html><head></head><body></body></html>');
     expect(result).toEqual({
@@ -70,7 +70,7 @@ describe('vite-plugin-version-injection', () => {
   it('use custom versionResolve to inject version', () => {
     const plugin = versionInjection({
       versionResolve: () => '200.200.200',
-    }) as Plugin;
+    });
     (plugin.configResolved as any)({} as ResolvedConfig);
     const result = (plugin.transformIndexHtml! as any)('<html><head></head><body></body></html>');
     expect(result).toEqual({

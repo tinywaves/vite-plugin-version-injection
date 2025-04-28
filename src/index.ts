@@ -9,19 +9,20 @@ interface VersionInjectionOptions {
   versionResolve?: () => string;
 }
 
-export default function versionInjection(options?: VersionInjectionOptions): Plugin {
-  const defaultVersionResolve = () => JSON
+const defaultVersionResolve = () =>
+  JSON
     .parse(
       fs.readFileSync(
         path.resolve(
           process.cwd(),
           'package.json',
         ),
-        'utf-8',
+        'utf8',
       ),
     )
     .version;
 
+export default function versionInjection(options?: VersionInjectionOptions): Plugin {
   const {
     injectTo = 'head',
     versionVarName = '__APP_VERSION__',

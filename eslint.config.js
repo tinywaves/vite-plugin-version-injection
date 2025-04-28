@@ -1,3 +1,3 @@
-import dhzh from '@dhzh/eslint-config';
+import { defineConfig } from '@dhzh/eslint-config';
 
-export default dhzh({});
+export default defineConfig();
