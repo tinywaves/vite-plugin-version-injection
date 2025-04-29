@@ -3,6 +3,11 @@
   "type": "module",
   "version": "0.0.5",
   "description": "A vite plugin that injects version information into your vite based application",
+  "keywords": [
+    "vite",
+    "version",
+    "vite-plugin"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
